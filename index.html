@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferdi Property | Partner Properti Terpercaya Cibubur & Jabodetabek</title>
+    <meta name="description" content="Melayani dengan hati sejak 2012. Partner jual beli properti terpercaya di Citra Gran Cibubur dan Jabodetabek. Konsultasi KPR & Legalitas gratis.">
+    <meta name="author" content="Ferdi Property">
+    
+    <!-- OPEN GRAPH -->
+    <meta property="og:title" content="Ferdi Property - Melayani Dengan Hati">
+    <meta property="og:description" content="Dari garasi rumah hingga partner terpercaya ribuan keluarga. Temukan properti impian Anda bersama kami.">
+    <meta property="og:image" content="aset/ferdi.webp">
+    <meta property="og:url" content="https://ferdiproperty.pages.dev">
+    <meta property="og:type" content="website">
+
+    <!-- PERFORMANCE OPTIMIZATION: PRELOAD HERO IMAGE -->
+    <link rel="preload" as="image" href="aset/luas.webp">
+
+    <!-- PRECONNECT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://images.unsplash.com">
+    
+    <!-- TAILWIND CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0f172a', // Slate 900
+                        secondary: '#d97706', // Amber 600
+                        accent: '#f59e0b', // Amber 500
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                        handwriting: ['Sacramento', 'cursive'], 
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&family=Sacramento&display=swap" rel="stylesheet">
+
+    <!-- FONTAWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; }
+        .fade-in { animation: fadeIn 0.8s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        
+        /* Custom Scrollbar for Gallery */
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* FIX: Animasi Bank agar JALAN DI LOKAL */
+        @keyframes scroll-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        .scrolling-wrapper {
+            display: flex;
+            width: max-content;
+            animation: scroll-left 40s linear infinite;
+        }
+
+        .scrolling-wrapper:hover {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <!-- NAVBAR -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <div class="bg-primary text-white p-2 rounded-lg">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-heading font-bold text-xl text-primary leading-none tracking-tight">Ferdi<span class="text-secondary">Property</span></span>
+                        <span class="text-[10px] text-gray-500 font-medium tracking-wide">EST. 2012</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-600 hover:text-primary font-medium transition">Beranda</a>
+                    <a href="#story" class="text-gray-600 hover:text-primary font-medium transition">Tentang Kami</a>
+                    <a href="#portfolio" class="text-gray-600 hover:text-primary font-medium transition">Portfolio</a>
+                    <a href="#bank" class="text-gray-600 hover:text-primary font-medium transition">Partner Bank</a>
+                    <a href="https://wa.me/6281311573058?text=Halo,%20saya%20tertarik%20konsultasi%20properti" 
+                       class="bg-secondary hover:bg-amber-700 text-white px-5 py-2.5 rounded-full font-medium transition shadow-lg hover:shadow-xl flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp"></i> Hubungi Kami
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" aria-label="Buka Menu" class="text-gray-600 hover:text-primary p-2 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="#home" class="block px-3 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 rounded-md">Beranda</a>
+                <a href="#story" class="block px-3 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 rounded-md">Tentang Kami</a>
+                <a href="#portfolio" class="block px-3 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 rounded-md">Portfolio Terjual</a>
+                <a href="#moments" class="block px-3 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 rounded-md">Momen Akad</a>
+                <a href="https://wa.me/6281311573058" class="block mt-4 px-3 py-3 bg-green-500 text-white text-center rounded-lg font-bold">
+                    <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="fade-in z-10 order-2 lg:order-1">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-amber-50 text-amber-700 rounded-full text-sm font-semibold mb-6 border border-amber-100">
+                        <i class="fa-solid fa-star"></i> Sejak 2012 di Cibubur & Jabodetabek
+                    </div>
+                    <h1 class="text-4xl lg:text-6xl font-heading font-bold text-gray-900 leading-tight mb-6">
+                        Melayani Dengan Hati, <span class="text-secondary relative">Lebih Dari <svg class="absolute w-full h-3 -bottom-1 left-0 text-amber-200 -z-10" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="8" fill="none"/></svg></span> Sekadar Bisnis.
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed max-w-lg">
+                        Didirikan oleh <strong>Regie Ferdi & Ricky Ferdinand Wenas</strong>. Kami hadir bukan hanya sebagai broker, tapi partner keluarga Anda dalam menemukan hunian terbaik.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://wa.me/6281311573058?text=Halo%20Ibu%20Regie,%20saya%20ingin%20konsultasi" 
+                           class="bg-primary hover:bg-slate-800 text-white text-center px-8 py-4 rounded-xl font-semibold transition shadow-lg hover:translate-y-[-2px] flex justify-center items-center gap-2">
+                            Konsultasi Gratis <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#portfolio" 
+                           class="bg-white hover:bg-gray-50 text-gray-700 border border-gray-200 text-center px-8 py-4 rounded-xl font-semibold transition flex justify-center items-center gap-2">
+                            <i class="fa-solid fa-images text-gray-400"></i> Lihat Hasil Kerja Kami
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Image -->
+                <div class="relative order-1 lg:order-2">
+                    <div class="absolute -inset-4 bg-gradient-to-tr from-amber-100 to-blue-50 rounded-[2rem] transform rotate-2 -z-10"></div>
+                    
+                    <img 
+                        src="aset/luas.webp" 
+                        alt="Regie Ferdi dan Tim" 
+                        class="rounded-2xl shadow-2xl w-full h-[400px] lg:h-[500px] object-cover object-top"
+                        width="800"
+                        height="600"
+                        fetchpriority="high"
+                    >
+                    <!-- Floating Personal Profile Card (UPDATED POS & STYLE) -->
+                    <!-- Kapsul melayang, w-fit agar tidak ngeblok, dan posisi diatur ulang -->
+                    <div class="absolute -bottom-8 left-4 md:left-8 md:-bottom-10 bg-white/95 backdrop-blur-md p-2 pr-6 rounded-full shadow-xl border border-white/50 flex items-center gap-3 w-fit fade-in z-10">
+                        <div class="relative shrink-0">
+                            <!-- FOTO PROFIL -->
+                            <img 
+                                src="aset/ferdi.webp" 
+                                onerror="this.src='https://ui-avatars.com/api/?name=Regie+Ferdi&background=0D8ABC&color=fff&size=128'"
+                                alt="Regie Ferdi" 
+                                class="w-14 h-14 rounded-full object-cover border-2 border-white shadow-sm"
+                            >
+                            <!-- Indikator Online Hijau -->
+                            <div class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-green-500 border-2 border-white rounded-full animate-pulse" title="Online"></div>
+                        </div>
+                        <div>
+                            <p class="font-heading font-bold text-gray-900 text-sm leading-tight">Regie Regina</p>
+                            <p class="text-[10px] text-gray-500 font-medium mb-0.5">Marketing Ferdi property</p>
+                            <div class="flex text-yellow-400 text-[10px] gap-0.5">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                <span class="text-gray-400 ml-1 text-[9px]">(5.0)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR STORY SECTION -->
+    <section id="story" class="py-20 bg-slate-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-heading font-bold text-gray-900 mb-4">Perjalanan Kami</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Image Side -->
+                <div class="relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=400&q=80" 
+                             class="rounded-lg shadow-md mt-8 w-full h-auto" 
+                             alt="Kantor Awal" width="400" height="300" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=400&q=80" 
+                             class="rounded-lg shadow-md w-full h-auto" 
+                             alt="Kantor Citra Grand" width="400" height="300" loading="lazy">
+                    </div>
+                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-primary text-white w-24 h-24 rounded-full flex items-center justify-center border-4 border-white shadow-xl z-10">
+                        <span class="font-bold text-xl">10+ Thn</span>
+                    </div>
+                </div>
+
+                <!-- Story Text -->
+                <div class="space-y-6">
+                    <div>
+                        <span class="text-secondary font-bold text-lg">2012</span>
+                        <h3 class="text-2xl font-bold text-gray-900">Berawal dari Garasi</h3>
+                        <p class="text-gray-600 leading-relaxed mt-2">
+                            Kecintaan kami pada dunia properti mendorong saya (Regie Ferdi) dan suami (Ricky Ferdinand Wenas) mendirikan Ferdi Property. Kami memulai langkah kecil dari kantor sederhana di teras rumah kami di Perumahan Bukit Golf.
+                        </p>
+                    </div>
+                    <div class="relative pl-8 border-l-2 border-gray-200">
+                        <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-secondary"></div>
+                        <span class="text-secondary font-bold text-lg">2013 - Sekarang</span>
+                        <h3 class="text-2xl font-bold text-gray-900">Bertumbuh di Citra Grand Jatisampurna</h3>
+                        <p class="text-gray-600 leading-relaxed mt-2">
+                            Berkat kepercayaan klien, kami pindah ke Komp Pertokoan Citra Grand Cibubur (Ruko Gatewalk UR 19). Kami terus berkomitmen mendampingi proses jual beli Anda dari awal hingga tuntas di notaris.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BANK PARTNERS SECTION -->
+    <section id="bank" class="py-16 bg-white border-y border-gray-100 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 text-center">
+            <h3 class="text-xl font-bold text-gray-900">Partner Perbankan Terpercaya (KPR)</h3>
+            <p class="text-gray-500 text-sm mt-2">Kami bekerja sama dengan banyak bank untuk mempermudah proses KPR Anda.</p>
+        </div>
+        
+        <!-- Infinite Scroll Container -->
+        <div class="relative w-full overflow-hidden">
+            <!-- Fade Overlay Left/Right -->
+            <div class="absolute left-0 top-0 h-full w-20 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute right-0 top-0 h-full w-20 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+
+            <div class="flex">
+                <!-- Logo Track -->
+                <div class="scrolling-wrapper flex gap-12 items-center py-4">
+                    <!-- Original Set -->
+                    <img src="aset/BCA.png" alt="BCA" class="h-12 w-auto object-contain transition-transform hover:scale-110 duration-300">
+                    <img src="aset/bcasyariah.jfif" alt="BCA Syariah" class="h-12 w-auto object-contain transition-transform hover:scale-110 duration-300">
+                    <img src="aset/mandiri.jpg" alt="Mandiri" class="h-12 w-auto object-contain transition-transform hover:scale-110 duration-300">
+                    <img src="aset/cimb.jpg" alt="CIMB Niaga" class="h-12 w-auto object-contain transition-transform hover:scale-110 duration-300">
+                    <img src="aset/bsi.jpg" alt="BSI" class="h-12 w-auto object-contain transition-transform hover:scale-110 duration-300">
+                    <img src="aset/btn.webp" alt="BTN" class="h-12 w-auto object-contain transition-transform hover:scale-110 duration-300">
+                    <img src="aset/nisp.png" alt="OCBC NISP" class="h-12 w-auto object-contain transition-transform hover:scale-110 duration-300">
+                    <img src="aset/permata.jpg" alt="Permata" class="h-12 w-auto object-contain transition-transform hover:scale-110 duration-300">
+                    <img src="aset/uob.jfif" alt="UOB" class="h-12 w-auto object-contain transition-transform hover:scale-110 duration-300">
+                    <img src="aset/muamalat.png" alt="Muamalat" class="h-12 w-auto object-contain transition-transform hover:scale-110 duration-300">
+                    <img src="aset/panin.jpg" alt="Panin Bank" class="h-12 w-auto object-contain transition-transform hover:scale-110 duration-300">
+
+                    <!-- Duplicate Set for Seamless Loop -->
+                    <img src="aset/BCA.png" alt="BCA" class="h-12 w-auto object-contain transition-transform hover:scale-110 duration-300">
+                    <img src="aset/bcasyariah.jfif" alt="BCA Syariah" class="h-12 w-auto object-contain transition-transform hover:scale-110 duration-300">
+                    <img src="aset/mandiri.jpg" alt="Mandiri" class="h-12 w-auto object-contain transition-transform hover:scale-110 duration-300">
+                    <img src="aset/cimb.jpg" alt="CIMB Niaga" class="h-12 w-auto object-contain transition-transform hover:scale-110 duration-300">
+                    <img src="aset/bsi.jpg" alt="BSI" class="h-12 w-auto object-contain transition-transform hover:scale-110 duration-300">
+                    <img src="aset/btn.webp" alt="BTN" class="h-12 w-auto object-contain transition-transform hover:scale-110 duration-300">
+                    <img src="aset/nisp.png" alt="OCBC NISP" class="h-12 w-auto object-contain transition-transform hover:scale-110 duration-300">
+                    <img src="aset/permata.jpg" alt="Permata" class="h-12 w-auto object-contain transition-transform hover:scale-110 duration-300">
+                    <img src="aset/uob.jfif" alt="UOB" class="h-12 w-auto object-contain transition-transform hover:scale-110 duration-300">
+                    <img src="aset/muamalat.png" alt="Muamalat" class="h-12 w-auto object-contain transition-transform hover:scale-110 duration-300">
+                    <img src="aset/panin.jpg" alt="Panin Bank" class="h-12 w-auto object-contain transition-transform hover:scale-110 duration-300">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 1: SOLD ASSETS (Portfolio) -->
+    <section id="portfolio" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-3xl font-heading font-bold text-gray-900">Aset Berhasil Terjual</h2>
+                    <p class="text-gray-600 mt-2">Beberapa properti pilihan yang telah menemukan pemilik barunya melalui kami.</p>
+                </div>
+                <!-- UPDATED LINK WITH TEMPLATE -->
+                <a href="https://wa.me/6281311573058?text=Halo%20Ferdiproperti,%20saya%20ingin%20minta%20info%20listing%20properti%20yang%20sedang%20aktif%20saat%20ini." 
+                   class="inline-flex items-center text-secondary font-semibold hover:text-primary transition mt-4 md:mt-0 group"
+                   target="_blank">
+                    Lihat Listing Aktif <i class="fa-solid fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+
+            <!-- Grid 7 Foto Aset -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Item 1 -->
+                <div class="relative group overflow-hidden rounded-xl shadow-lg">
+                    <div class="absolute top-2 right-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded z-10">SOLD OUT</div>
+                    <img src="aset/image12.webp" alt="Terjual" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500" loading="lazy" width="400" height="300">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                        <p class="text-white font-medium text-sm">Terjual Rumah Pejaten Indah</p>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="relative group overflow-hidden rounded-xl shadow-lg">
+                    <div class="absolute top-2 right-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded z-10">RENTED</div>
+                    <img src="aset/image13.webp" alt="Tersewa" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500" loading="lazy" width="400" height="300">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                        <p class="text-white font-medium text-sm">Tersewa 3 Tahun Ruko Leuwinanggung</p>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="relative group overflow-hidden rounded-xl shadow-lg">
+                    <div class="absolute top-2 right-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded z-10">SOLD OUT</div>
+                    <img src="aset/image14.webp" alt="Terjual" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500" loading="lazy" width="400" height="300">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                        <p class="text-white font-medium text-sm">Terjual Rumah di Raffless Hills</p>
+                    </div>
+                </div>
+                <!-- Item 4 (Large on Desktop) -->
+                <div class="relative group overflow-hidden rounded-xl shadow-lg md:col-span-2 md:row-span-2">
+                    <div class="absolute top-2 right-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded z-10">SOLD OUT</div>
+                    <img src="aset/image18.webp" alt="Terjual" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500" loading="lazy" width="800" height="600">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                        <p class="text-white font-bold text-lg">Terjual Rumah Kampung Tapos</p>
+                    </div>
+                </div>
+                <!-- Item 5 -->
+                <div class="relative group overflow-hidden rounded-xl shadow-lg">
+                    <div class="absolute top-2 right-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded z-10">SOLD OUT</div>
+                    <img src="aset/image17.webp" alt="Terjual" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500" loading="lazy" width="400" height="300">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                        <p class="text-white font-medium text-sm">Terjual Rumah di Kawasan Legenda Wisata Cibubur</p>
+                    </div>
+                </div>
+                 <!-- Item 6 -->
+                 <div class="relative group overflow-hidden rounded-xl shadow-lg">
+                    <div class="absolute top-2 right-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded z-10">SOLD OUT</div>
+                    <img src="aset/image11.webp" alt="Terjual" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500" loading="lazy" width="400" height="300">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                        <p class="text-white font-medium text-sm">Terjual Ruko Citra Grand Cibubur</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: HAPPY MOMENTS (Akad Gallery) -->
+    <section id="moments" class="py-20 bg-primary text-white relative overflow-hidden">
+        <!-- Decoration -->
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12">
+                <span class="text-secondary font-bold tracking-widest uppercase text-sm">Testimoni Visual</span>
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mt-2 mb-4">Menemani Hingga Tuntas</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Momen kebahagiaan saat penandatanganan akad jual beli (AJB) di hadapan notaris. Kami pastikan legalitas aman dan proses lancar.</p>
+            </div>
+
+            <!-- Horizontal Scroll Gallery for "Akad Photos" -->
+            <!-- Note: ID added for Auto-Scroll Script -->
+            <div id="scrolling-gallery" class="flex overflow-x-auto gap-6 pb-8 hide-scroll snap-x snap-mandatory px-4 md:px-0 scroll-smooth">
+                <!-- Photo 1 -->
+                <!-- Adjusted min-w for mobile responsive (85vw) -->
+                <div class="min-w-[85vw] md:min-w-[350px] snap-center bg-slate-800 rounded-xl overflow-hidden shadow-2xl border border-slate-700">
+                    <img src="aset/image1.webp" class="w-full h-48 object-cover opacity-90" alt="Akad 1" loading="lazy">
+                    <div class="p-5">
+                        <div class="text-accent text-sm mb-2"><i class="fa-solid fa-calendar-check"></i> Akad Jual Beli</div>
+                        <p class="text-sm text-slate-300 italic">"jual beli ruko citra grand di notaris ibu Elyani, SH"</p>  
+                    </div>
+                </div>
+                <!-- Photo 2 -->
+                <div class="min-w-[85vw] md:min-w-[350px] snap-center bg-slate-800 rounded-xl overflow-hidden shadow-2xl border border-slate-700">
+                    <img src="aset/image2.webp" class="w-full h-48 object-cover opacity-90" alt="Akad 2" loading="lazy">
+                    <div class="p-5">
+                        <div class="text-accent text-sm mb-2"><i class="fa-solid fa-file-signature"></i> Akad Pembelian rumah</div>
+                        <p class="text-sm text-slate-300 italic">"pembelian rumah di citra gran dengan notaris Elyani, SH"</p>
+                    </div>
+                </div>
+                <!-- Photo 3 -->
+                <div class="min-w-[85vw] md:min-w-[350px] snap-center bg-slate-800 rounded-xl overflow-hidden shadow-2xl border border-slate-700">
+                    <img src="aset/image3.webp" class="w-full h-48 object-cover opacity-90" alt="Akad 3" loading="lazy">
+                    <div class="p-5">
+                        <div class="text-accent text-sm mb-2"><i class="fa-solid fa-handshake"></i> Akad Jual beli</div>
+                        <p class="text-sm text-slate-300 italic">"jual beli ruko citra grand bubur dengan notaris Elyani,SH"</p>
+                    </div>
+                </div>
+                <!-- Photo 4 -->
+                <div class="min-w-[85vw] md:min-w-[350px] snap-center bg-slate-800 rounded-xl overflow-hidden shadow-2xl border border-slate-700">
+                    <img src="aset/image4.webp" class="w-full h-48 object-cover opacity-90" alt="Akad 4" loading="lazy">
+                    <div class="p-5">
+                        <div class="text-accent text-sm mb-2"><i class="fa-solid fa-handshake"></i> Akad Jual Beli</div>
+                        <p class="text-sm text-slate-300 italic">"jual beli ruko citra gran dengan notaris Elyani, SH."</p>
+                    </div>
+                </div>
+                <!-- Photo 5 -->
+                <div class="min-w-[85vw] md:min-w-[350px] snap-center bg-slate-800 rounded-xl overflow-hidden shadow-2xl border border-slate-700">
+                    <img src="aset/image7.webp" class="w-full h-48 object-cover opacity-90" alt="Akad 5" loading="lazy">
+                    <div class="p-5">
+                        <div class="text-accent text-sm mb-2"><i class="fa-solid fa-handshake"></i> Akad Jual Beli</div>
+                        <p class="text-sm text-slate-300 italic">"jual beli rumah Raffless hills di notaris Susanti Salim, SH."</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <p class="text-sm text-slate-500">Geser untuk melihat momen kebahagiaan lainnya <i class="fa-solid fa-arrow-right ml-1"></i></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION (CTA) & MAPS -->
+    <section class="py-20 bg-white relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <h2 class="text-3xl lg:text-4xl font-heading font-bold text-gray-900 mb-6">Butuh Konsultasi di Citra Gran & Sekitarnya?</h2>
+            <p class="text-gray-600 text-lg mb-8">
+                Jangan ragu untuk ngobrol santai dengan kami. Ceritakan kebutuhan properti Anda, kami siap membantu dengan hati.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-10">
+                <a href="https://wa.me/6281311573058?text=Halo,%20bisa%20bantu%20carikan%20properti?" 
+                   class="inline-flex justify-center items-center bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-full shadow-lg transform transition hover:-translate-y-1">
+                    <i class="fa-brands fa-whatsapp text-xl mr-2"></i> Chat WhatsApp
+                </a>
+                <a href="tel:+6281311573058" 
+                   class="inline-flex justify-center items-center bg-white border-2 border-primary text-primary hover:bg-gray-50 font-bold py-4 px-8 rounded-full shadow-lg transition">
+                    <i class="fa-solid fa-phone text-xl mr-2"></i> Telepon Kami
+                </a>
+                <a href="https://maps.app.goo.gl/vaDuJ1MVX8ihZwxj7" target="_blank"
+                   class="inline-flex justify-center items-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-full shadow-lg transform transition hover:-translate-y-1">
+                    <i class="fa-solid fa-map-location-dot text-xl mr-2"></i> Petunjuk Arah
+                </a>
+            </div>
+
+            <!-- Google Maps Embed -->
+            <div class="w-full max-w-2xl mx-auto bg-white p-2 rounded-xl shadow-lg border border-gray-100">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.539562692237!2d106.92487331476974!3d-6.381347995383562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69934e60472d95%3A0x4963507119069677!2sCitra%20Gran%20Cibubur!5e0!3m2!1sen!2sid!4v1684305884732!5m2!1sen!2sid" 
+                    width="100%" 
+                    height="250" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    class="rounded-lg"
+                    title="Lokasi Ferdi Property di Citra Gran Cibubur">
+                </iframe>
+                <div class="text-left mt-2 px-1">
+                     <p class="text-xs text-gray-500"><i class="fa-solid fa-location-dot text-red-500 mr-1"></i> Citra Gran Cibubur, Ruko Gatewalk UR 19</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-primary text-slate-300 py-16 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                        <i class="fa-solid fa-house-user text-secondary text-2xl"></i>
+                        <span class="text-white font-heading font-bold text-2xl">Ferdi<span class="text-secondary">Property</span></span>
+                    </div>
+                    <p class="text-sm text-slate-400 leading-relaxed mb-6 max-w-sm">
+                        Melayani dengan hati dan tidak semata-mata bisnis. Partner properti terpercaya Anda sejak 2012 untuk wilayah Citra Gran Cibubur dan Jabodetabek.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://www.instagram.com/ferdiproperty/" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-secondary transition"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-secondary transition"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="ferdipropertyofficial" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-secondary transition"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-6">Lokasi Kantor</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-map-pin text-secondary mt-1"></i>
+                            <span>Komp. Pertokoan Citra Gran Cibubur,<br>Ruko Gatewalk UR 19,<br>Jatikarya, Jatisampurna, Bekasi</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-clock text-secondary"></i>
+                            <span>Senin - Sabtu: 09.00 - 17.00</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6">Hubungi Kami</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-green-500 text-lg"></i>
+                            <a href="https://wa.me/6281311573058" class="hover:text-white transition">+62 813-1157-3058</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa- text-secondary"></i>
+                            <a href="mailto:info@ferdiproperty.com" class="hover:text-white transition"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
+                <div>&copy; 2023 Ferdi Property. All rights reserved.</div>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP -->
+    <a href="https://wa.me/6281311573058?text=Halo,%20saya%20ingin%20tanya%20properti" 
+       class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl z-50 flex items-center justify-center transition-all duration-300 hover:scale-110 group border-4 border-white"
+       aria-label="Chat WhatsApp">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+        <span class="absolute right-full mr-3 bg-white text-gray-800 px-4 py-2 rounded-xl shadow-lg text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap hidden sm:block">
+            Hubungi Pak Ferdi
+        </span>
+    </a>
+
+    <!-- SCRIPT -->
+    <script>
+        // Mobile Menu Logic
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Navbar Shadow on Scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+
+        // --- AUTO SCROLL GALLERY LOGIC ---
+        const gallery = document.getElementById('scrolling-gallery');
+        
+        // Fungsi untuk scroll otomatis
+        let scrollInterval;
+        
+        const startAutoScroll = () => {
+            // Bersihkan interval lama jika ada
+            if (scrollInterval) clearInterval(scrollInterval);
+            
+            scrollInterval = setInterval(() => {
+                // Cek lebar card pertama (termasuk gap)
+                const card = gallery.querySelector('div');
+                const cardWidth = card ? card.offsetWidth + 24 : 300; // 24 is gap-6
+
+                // Jika sudah mentok kanan, balik ke awal
+                if (gallery.scrollLeft + gallery.clientWidth >= gallery.scrollWidth - 10) {
+                    gallery.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    // Scroll ke kanan sebesar satu card
+                    gallery.scrollBy({ left: cardWidth, behavior: 'smooth' });
+                }
+            }, 3000); // Geser setiap 3 detik
+        };
+
+        const stopAutoScroll = () => {
+            clearInterval(scrollInterval);
+        };
+
+        // Jalankan saat load
+        startAutoScroll();
+
+        // Event Listeners untuk interaksi user (Touch/Mouse)
+        // Saat user menyentuh/hover, stop auto scroll
+        gallery.addEventListener('touchstart', stopAutoScroll, { passive: true });
+        gallery.addEventListener('mouseenter', stopAutoScroll);
+
+        // Saat user melepas sentuhan/keluar mouse, jalan lagi
+        gallery.addEventListener('touchend', startAutoScroll);
+        gallery.addEventListener('mouseleave', startAutoScroll);
+
+    </script>
+</body>
+</html>
